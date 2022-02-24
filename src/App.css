@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+* {
+  font-family: 'Jost', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* body { */
+/* background: linear-gradient(
+      rgba(255, 255, 255, 0.671) 80%,
+      rgba(255, 255, 255, 0.4) 100%
+    ),
+    url('./images/heroimage.jpg') center center / cover no-repeat;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  height: 100%;
+  width: 100%; */
+/* height: 100%;
+  background: rgb(84, 205, 69);
+  background: linear-gradient(
+    0deg,
+    rgba(84, 205, 69, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  ); */
+/* } */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* body {
+  background: rgb(201, 255, 191);
+  background: linear-gradient(
+    0deg,
+    rgba(201, 255, 191, 1) 20%,
+    rgba(234, 207, 190, 1) 40%,
+    rgba(249, 185, 189, 1) 60%,
+    rgba(225, 220, 190, 1) 80%,
+    rgba(201, 255, 191, 1) 100%
+  );
+} */
