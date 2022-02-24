@@ -21,7 +21,7 @@ function App() {
       <Navbar toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Routes>
-        <Route path='/' element={<Home />} />{' '}
+        <Route path='/what-to-eat' element={<Home />} />{' '}
         <Route path='/about' element={<AboutUs />} />{' '}
         <Route path='/demo' element={<Demo />} />{' '}
         <Route path='/contact' element={<Contact />} />{' '}
