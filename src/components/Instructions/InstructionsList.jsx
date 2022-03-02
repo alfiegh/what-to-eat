@@ -4,7 +4,7 @@ import { Button, InstWrapper, StepNum, StepDetail } from './InstElements';
 const InstructionsList = ({ arr }) => {
   const [isActive, setIsActive] = useState(false);
 
-  if (arr.length >= 0) {
+  if (arr.length > 0) {
     return (
       <>
         <Button onClick={() => setIsActive(!isActive)}>

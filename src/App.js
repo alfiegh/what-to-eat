@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Search from './components/SearchOptions/SearchOptions';
-import AboutUs from './pages/AboutUs';
-import Contact from './pages/Contact';
+import AboutUs from './pages/About/AboutUs';
+import Contact from './pages/Contact/Contact';
 import Home from './pages/Home/Home';
-import Demo from './pages/Demo';
+import Demo from './pages/Demo/Demo';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);

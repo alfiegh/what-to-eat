@@ -20,7 +20,7 @@ const Navbar = ({ toggle }) => {
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to='/'>
+          <NavLogo to='/what-to-eat'>
             <Logo src={logo} />
           </NavLogo>
           <MobileIcon onClick={toggle}>
@@ -28,10 +28,10 @@ const Navbar = ({ toggle }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to='/'>Home</NavLinks>
+              <NavLinks to='/what-to-eat'>Home</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to='/about'>About Us</NavLinks>
+              <NavLinks to='/about'>About</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to='/demo'>Demo</NavLinks>

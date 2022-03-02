@@ -10,15 +10,11 @@ export const AboutUsSection = styled.section`
 `;
 
 export const Title = styled.h1`
-  background: rgb(49, 73, 64);
-  height: auto;
-  padding: 0.5rem;
-  color: #ffffff;
-  width: auto;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: start;
+  letter-spacing: 2px;
+  margin-top: 0;
+  font-weight: 400;
+  text-transform: uppercase;
 `;
 
 export const Subtitle = styled.h2`
@@ -34,9 +30,9 @@ export const Subtitle = styled.h2`
 `;
 
 export const Paragraph = styled.p`
+  font-weight: 200;
   text-align: justify;
-  font-weight: 500;
-  font-size: 1.2rem;
+  margin-top: 1rem;
 `;
 
 export const Links = styled(Link)`

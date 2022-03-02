@@ -6,17 +6,34 @@ import {
   Paragraph,
   FormLabel,
   SendBtn,
-} from '../styledElements/ContactElements';
+} from './ContactElements';
 
 const Contact = () => {
   return (
     <ContactSection className='container'>
-      <div className='col-md-6 offset-md-3 display-1 text-center mt-5'>
-        <Link to={{ pathname: 'https://alfonsoeg.com' }} target='_blank'>
-          My website
+      <div className='col-md-8 offset-md-2 text-center mt-5'>
+        <h1>This is a trial app, for more info reach me via:</h1>
+        <Link
+          style={{
+            textDecoration: 'none',
+            fontSize: '2rem',
+            fontWeight: '300',
+            color: 'rgb(121,166,88)',
+            marginTop: '5rem',
+          }}
+          to={{ pathname: 'https://alfonsoeg.com' }}
+          target='_blank'
+        >
+          https://alfonsoeg.com
         </Link>
         <br />
         <Link
+          style={{
+            textDecoration: 'none',
+            fontSize: '2rem',
+            fontWeight: '300',
+            color: 'rgb(121,166,88)',
+          }}
           to={{ pathname: 'https://twitter.com/alfonsoeg' }}
           target='_blank'
         >

@@ -33,11 +33,7 @@ export const Home = () => {
           <img src={cooking} className='img-fluid' alt='meal planner image' />
         </div>
       </div>
-      {/* <div className='row'>
-        <div className='col-md-4 offset-md-4 text-center'>
-          <h3>Get me some ideas!</h3>
-        </div>
-      </div> */}
+
       <StepsBanner />
       <Search />
     </section>

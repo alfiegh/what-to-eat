@@ -12,51 +12,38 @@ import RandomMeals from '../RandomMeals/RandomMeals';
 //   GiMeat,
 // } from 'react-icons/gi';
 import {
-  Item,
-  Paragraph,
+  AboutSection,
   Subtitle,
   Title,
   SubmitBtn,
-  HomeSection,
-  CardInput,
-  List,
   Label,
 } from './SearchElements';
 
 const Search = () => {
   const [dietStyle, setDietStyle] = useState('');
-  // const [calories, setCalories] = useState('');
-  // const [period, setPeriod] = useState('');
   const [mealType, setMealType] = useState('');
   const [result, setResult] = useState({});
   const [number, setNumber] = useState('');
-  // const [mealIds, setMealIds] = useState([]);
 
   const handleSubmit = async () => {
     try {
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/random?apiKey=cd5e125467d7474887e544648d109cef&limitLicense=true&tags=${dietStyle},${mealType}&number=${number}`
+        `https://api.spoonacular.com/recipes/random?apiKey=cd5e125467d7474887e544648d109cef&tags=${dietStyle},${mealType}&number=${number}`
       );
-      // console.log(data);
+
       setResult(data);
-      // const arrayofIds = data.meals.map((m) => m.id);
-      // setMealIds(arrayofIds);
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <HomeSection className='container'>
+    <AboutSection className='container'>
       <div className='row'>
         <div className='col-md-10 offset-md-1'>
           <Title className='text-center mt-4'>Ok Chef! I am ready! </Title>
 
           <Subtitle>Let's find your meals</Subtitle>
-          {/* <Paragraph>
-            Is simple: choose your diet style, choose your calories count and
-            decide if you want ideas for a day or a week!
-          </Paragraph> */}
         </div>
         <form className='col-md-8 offset-md-2'>
           <div className='form-group'>
@@ -101,35 +88,6 @@ const Search = () => {
             </select>
           </div>
 
-          {/* <div className='form-group mt-2'>
-            <Label htmlFor='exampleFormControlSelect1'>Calories</Label>
-
-            <select
-              value={calories}
-              onChange={(e) => setCalories(e.target.value)}
-              className='form-control'
-              id='exampleFormControlSelect1'
-            >
-              <option value=''>Select amount</option>
-              <option value='1800'>1800</option>
-              <option value='2000'>2000</option>
-              <option value='2200'>2200</option>
-            </select>
-          </div> */}
-
-          {/* <div className='form-group mt-2'>
-            <Label htmlFor='exampleFormControlSelect1'>Period</Label>
-            <select
-              value={period}
-              onChange={(e) => setPeriod(e.target.value)}
-              className='form-control'
-              id='exampleFormControlSelect1'
-            >
-              <option value=''>Choose day or week</option>
-              <option value='day'>Day</option>
-              <option value='week'>Week</option>
-            </select>
-          </div> */}
           <div className='form-group mt-2'>
             <Label htmlFor='exampleFormControlSelect1'>Meal Type</Label>
             <select
@@ -139,9 +97,7 @@ const Search = () => {
               id='exampleFormControlSelect1'
             >
               <option value=''>Choose lunch or dinner</option>
-              <option disabled value='breakfast'>
-                Breakfast
-              </option>
+              <option value='breakfast'>Breakfast</option>
               <option value='lunch'>Lunch</option>
               <option value='dinner'>Dinner</option>
             </select>
@@ -159,6 +115,7 @@ const Search = () => {
               <option value='2'>2</option>
               <option value='3'>3</option>
               <option value='4'>4</option>
+              <option value='5'>5</option>
             </select>
           </div>
         </form>
@@ -172,7 +129,7 @@ const Search = () => {
           <RandomMeals result={result} />
         </div>
       )}
-    </HomeSection>
+    </AboutSection>
   );
 };
 

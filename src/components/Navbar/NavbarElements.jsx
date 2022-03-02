@@ -1,6 +1,5 @@
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
-// import { Link as LinkS, animateScroll as scroll } from 'react-scroll';
 
 export const Nav = styled.nav`
   background: rgb(94, 185, 67);

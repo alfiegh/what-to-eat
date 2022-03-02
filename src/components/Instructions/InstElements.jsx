@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  /* width: auto;
-  padding: 8px;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  background: red;
-  font-weight: 400; */
   border-radius: 50px;
   background: rgb(218, 56, 50);
   white-space: nowrap;

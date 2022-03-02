@@ -1,7 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const MealsContainer = styled.div`
-  /* background: #af2323; */
   display: flex;
   justify-content: space-evenly;
   border-radius: 5px;
@@ -11,25 +10,15 @@ export const MealsContainer = styled.div`
   }
 `;
 export const MealCard = styled.div`
-  background: #ece9e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    rgb(230, 230, 230),
-    #ece9e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    rgb(230, 230, 230),
-    #ece9e6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #ece9e6;
+  background: -webkit-linear-gradient(to bottom, rgb(230, 230, 230), #ece9e6);
+  background: linear-gradient(to bottom, rgb(230, 230, 230), #ece9e6);
   box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
   height: 100%;
   border: none;
-  /* width: calc(100% / 3); */
   width: 100%;
 
   @media screen and (max-width: 768px) {
@@ -39,23 +28,11 @@ export const MealCard = styled.div`
     width: 100%;
   }
 
-  /* &:hover {
-    background: #b8b5b3ae;
-  } */
-
   &.active {
-    background: #c3d3baae;
-    /* background: #76b852; 
-    background: -webkit-linear-gradient(
-      to bottom,
-      #8dc26f,
-      #76b852
-    ); 
-    background: linear-gradient(
-      to bottom,
-      #8dc26f,
-      #76b852
-    ); */
+    /* background: #c3d3baae; */
+    /* background: #76b852; */
+    background: -webkit-linear-gradient(to bottom, #89da5e9d, #98c47f89);
+    background: linear-gradient(to bottom, #8dc26f, #76b852);
   }
 `;
 
@@ -68,14 +45,6 @@ export const MealImg = styled.img`
   object-fit: cover;
   width: 100%;
   height: 240px;
-  /* border-radius: 5px;
-  /* min-height: 182px;
-  min-width: 274px;
-  max-height: 183px;
-  max-width: 275px; */
-  /* overflow: hidden; */
-  /* background-image: url(${(props) => props.img});
-  background-size: cover; */
 `;
 
 export const MealTitle = styled.p`

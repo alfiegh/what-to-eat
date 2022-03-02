@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, List, ListWrapper, OrgList } from './IngElements';
-const IngredientsList = ({ id, arr }) => {
+const IngredientsList = ({ arr }) => {
   const [isActive, setIsActive] = useState(false);
-
-  //   useEffect(() => {
-  //     if (isActive) {
-  //       setIsActive(false);
-  //     } else {
-  //       setIsActive(true);
-  //     }
-  //   }, [id]);
 
   return (
     <>
@@ -21,10 +13,7 @@ const IngredientsList = ({ id, arr }) => {
           <OrgList style={{ paddingLeft: '0' }}>
             {arr.map((i) => (
               <List key={i.id} className='text-start'>
-                {/* <span>
-                <input type='checkbox' value={i} />
-              </span> */}
-                {i.name}: {Math.fround(i.amount)} {i.unit}{' '}
+                {i.name}: {Math.fround(i.amount).toFixed(2)} {i.unit}{' '}
               </List>
             ))}
           </OrgList>

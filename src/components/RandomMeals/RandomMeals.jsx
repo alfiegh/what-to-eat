@@ -22,67 +22,14 @@ const RandomMeals = ({ result }) => {
   const { recipes } = result;
   const [uniqueId, setUniqueId] = useState('');
   const [btnActive, setBtnActive] = useState(0);
-  const [ingredients, setIngredients] = useState([]);
-  const [instructions, setInstructions] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
-  const [arrayIds, setArrayIds] = useState([]);
 
-  console.log(recipes);
-  console.log(ingredients);
-  // console.log(instructions);
+  // console.log(recipes);
   // console.log(uniqueId);
-  // console.log(arrayIds);
 
-  const handleClick = (i, id, extIngredients, directions) => {
+  const handleClick = (i, id) => {
     setUniqueId(id);
     setBtnActive(i);
-    // const uniqueIng = extIngredients.filter(
-    //   (v, i, a) => a.findIndex((t) => ['id'].every((k) => t[k] === v[k])) === i
-    // );
-    setIngredients(extIngredients);
-    setInstructions(directions);
-    // setIsVisible(!isVisible);
   };
-
-  // const setArrOfIds = () => {
-  //   if (recipes) return recipes.map((r) => r.id);
-  // };
-  // console.log(setArrOfIds());
-
-  // useEffect(() => {
-  //   if (recipes) {
-  //     const allIds = recipes.map((r) => r.id);
-  //     setArrayIds(allIds);
-  //   }
-  // }, [recipes]);
-
-  // const showIngredients = () => {
-  //   console.log('ingredients');
-  //   setIsVisible(!isVisible);
-  // };
-
-  // useEffect(() => {
-  //   setIngredients(recipes.extIngredients);
-  // }, [uniqueId]);
-
-  // let arrOfIds = recipes.map((r) => r.id);
-  // console.log(arrOfIds);
-  // const currentRecipeId = () => {
-  //   let found = arrayIds.find((e) => e === uniqueId);
-  //   return found;
-  //   return arr.filter((str) => {
-  //     return str === id;
-  //   });
-  // };
-  // console.log(found);
-
-  // console.log(currentRecipeId());
-
-  // let uniqBy = ingredients.filter(
-  //   (v, i, a) => a.findIndex((t) => ['id'].every((k) => t[k] === v[k])) === i
-  // );
-
-  // console.log(uniqBy);
 
   return (
     <>
@@ -91,15 +38,7 @@ const RandomMeals = ({ result }) => {
           recipes.map((meal, i) => (
             <MealCard
               key={meal.id}
-              // onMouseEnter={setUniqueId(meal.id)}
-              onClick={() =>
-                handleClick(
-                  i,
-                  meal.id,
-                  meal.extendedIngredients,
-                  meal.analyzedInstructions
-                )
-              }
+              onClick={() => handleClick(i, meal.id)}
               className={meal.id === uniqueId ? 'active' : ''}
             >
               <ImgContainer>
@@ -133,56 +72,16 @@ const RandomMeals = ({ result }) => {
                 </Servings>
               </Details>
               <div className='d-flex justify-content-center'>
-                {/* <button onClick={showIngredients}>
-                  {isVisible ? 'Close Ingredients' : 'See Ingredients'}
-                </button> */}
                 <div style={{ width: 'calc(100%/2)', textAlign: 'center' }}>
-                  <IngredientsList id={uniqueId} arr={ingredients} />
+                  <IngredientsList arr={meal.extendedIngredients} />
                 </div>
                 <div style={{ width: 'calc(100%/2)', textAlign: 'center' }}>
-                  <InstructionsList arr={instructions} />
+                  <InstructionsList arr={meal.analyzedInstructions} />
                 </div>
               </div>
             </MealCard>
           ))}
       </MealsContainer>
-
-      {/* <div className='container-fluid'>
-        <div className='row'>
-          {uniqueId && ingredients && (
-            <div className='col-md-4'>
-              <p className='text-start mt-3'>Get the ingredients ready: </p>
-              <ul>
-                {ingredients.map((i) => (
-                  <li key={i.id} className='text-start'>
-                    {i.name}: {Math.fround(i.amount)} {i.unit}{' '}
-                    <span>
-                      <input type='checkbox' value={i} />
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {uniqueId && instructions && (
-            <div className='col-md-8'>
-              {instructions.map((item, i) => (
-                <div key={i} style={{ background: 'white' }}>
-                  <div>
-                    <p>{item.name !== '' ? 'Step:' + item.name : ''}</p>
-                    {item.steps.map((s) => (
-                      <div>
-                        <p>Step {s.number}:</p>
-                        <p>{s.step}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div> */}
     </>
   );
 };
